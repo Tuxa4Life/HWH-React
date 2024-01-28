@@ -1,0 +1,36 @@
+.assets-container {
+  width: 100%;
+  min-height: 90dvh;
+  position: relative;
+}
+.assets-container .button.create {
+  position: absolute;
+  top: 20px;
+  right: 50px;
+}
+.assets-container .post-upload {
+  width: 100%;
+  height: 100dvh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.assets-container .post-upload .ui.form {
+  background-color: white;
+  border: 1px black solid;
+  border-radius: 7px;
+  padding: 20px;
+  min-width: 250px;
+  width: 22%;
+}
+.assets-container .post-upload .ui.form h3 {
+  width: 100%;
+  text-align: center;
+}
+.assets-container .post-upload .ui.form .btn-holder {
+  display: flex;
+  justify-content: right;
+}/*# sourceMappingURL=Assets.css.map */

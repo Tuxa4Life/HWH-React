@@ -1,6 +1,6 @@
 Make HWH Great again!
 
-Post - author, title, description, type, date, likes[], comments[]
+Post - author, title, description, type, date, likes[], comments[], editable
 User - name, email, password, bookmarks[]
 Comment - author, content, date
 
