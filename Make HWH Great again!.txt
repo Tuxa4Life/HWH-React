@@ -1,0 +1,9 @@
+Make HWH Great again!
+
+Post - author, title, description, type, date, likes[], comments[]
+User - name, email, password, bookmarks[]
+Comment - author, content, date
+
+Homepage - Initial register card, latest posts, bookmarked posts
+Assets - upload, filter
+Chats - dms and public chat
