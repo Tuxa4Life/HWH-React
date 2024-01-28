@@ -13,10 +13,14 @@ const Provider = ({ children }) => {
 
     const uploadPost = async (title, text) => {
         const response = await axios.post('http://localhost:3001/posts', {
-            author: "Guest", title, text
+            author: "Guest", title, text,
+            subject: 'Default',
+            likes: [],
+            comments: [],
+            date: new Date().toLocaleString('en-US', { day: 'numeric', month: 'short', hour: 'numeric', minute: 'numeric' })
         })
         
-        setPosts(...posts, response.data)
+        setPosts([...posts, response.data])
     }
 
     const dataToShare = {

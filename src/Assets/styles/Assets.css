@@ -33,4 +33,15 @@
 .assets-container .post-upload .ui.form .btn-holder {
   display: flex;
   justify-content: right;
+}
+.assets-container .post-container {
+  width: 100%;
+  height: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column-reverse;
+}
+.assets-container .post-container i {
+  cursor: pointer;
 }/*# sourceMappingURL=Assets.css.map */

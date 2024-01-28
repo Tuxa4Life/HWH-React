@@ -1,4 +1,27 @@
 {
   "users": [],
-  "posts": []
+  "posts": [
+    {
+      "author": "Guest",
+      "title": "Hello World!",
+      "text": "How's it going?",
+      "subject": "Default",
+      "likes": [
+        "Tuxa"
+      ],
+      "comments": [],
+      "date": "Jan 28, 10:17 PM",
+      "id": 1
+    },
+    {
+      "author": "Guest",
+      "title": "Bye World!",
+      "text": "Fuck you.",
+      "subject": "Default",
+      "likes": [],
+      "comments": [],
+      "date": "Jan 28, 10:23 PM",
+      "id": 2
+    }
+  ]
 }

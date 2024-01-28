@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import '../Assets/styles/Assets.css'
 import PostUpload from "./PostUpload";
 import usePostsContext from "../Hooks/usePostsContext";
+import PostContainer from "./PostContainer";
 
 const Assets = () => {
     const { fetchPosts } = usePostsContext()
@@ -13,7 +14,7 @@ const Assets = () => {
 
     useEffect(() => {
         fetchPosts()
-    }, [fetchPosts])
+    }, [])
 
     return (
         <div className="assets-container">
@@ -22,6 +23,7 @@ const Assets = () => {
             </button>
 
             { uploadOpen ? <PostUpload toggleUpload={toggleUpload} /> : null }
+            <PostContainer />
         </div>
     )
 }

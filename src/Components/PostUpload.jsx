@@ -15,7 +15,7 @@ const PostUpload = ({ toggleUpload }) => {
     }
 
     return (
-        <div onSubmit={upload} className="post-upload">
+        <div onSubmit={upload} className="post-upload" style={{zIndex: '5'}}>
             <form className="ui form">
                 <h3>Create a new post</h3>
                 <div className="field">
