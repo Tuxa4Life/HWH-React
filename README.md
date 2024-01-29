@@ -8,3 +8,6 @@ you can see the old project here: [HWH](https://hwh-old.netlify.app/)
 
 *to setup this project you'll need to host server and website on localhost concurrently* <br>
 *script of the server is in the `package.json` file*
+
+Used packages
+> axios, json-server
