@@ -11,9 +11,9 @@ const Provider = ({ children }) => {
         setPosts(response.data)
     }, [])
 
-    const uploadPost = async (title, text) => {
+    const uploadPost = async (title, text, author) => {
         const response = await axios.post('http://localhost:3001/posts', {
-            author: "Guest", title, text,
+            author, title, text,
             subject: 'Default',
             likes: [],
             comments: [],
@@ -23,8 +23,16 @@ const Provider = ({ children }) => {
         setPosts([...posts, response.data])
     }
 
+    const getPost = (id) => {
+        posts.map(e => {
+            if (e.id === id) {
+                return e
+            }
+        })
+    }
+
     const dataToShare = {
-        posts, uploadPost, fetchPosts
+        posts, uploadPost, fetchPosts, getPost
     }
 
     return (

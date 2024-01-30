@@ -1,16 +1,22 @@
 import React, { useState } from "react";
 import usePostsContext from '../Hooks/usePostsContext';
+import useUsersContext from "../Hooks/useUsersContext";
 
 const PostUpload = ({ toggleUpload }) => {
     const { uploadPost } = usePostsContext();
+    const { currentUser } = useUsersContext()
 
     const [title, setTitle] = useState('')
     const [text, setText] = useState('')
 
     const upload = (e) => {
         e.preventDefault()
+        let author = 'Guest'
+        if (currentUser !== null) {
+            author = currentUser.username
+        }
 
-        uploadPost(title, text)
+        uploadPost(title, text, author)
         toggleUpload()
     }
 
