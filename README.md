@@ -2,7 +2,7 @@
 ## Second trial.
 
 **HWH** (Homework helper) is a final project of mine when I was studying at **Step Academy** (2019). <br>
-After that I've mastered many concepts in full-stack development and this is my second go of making same app. <br>
+After that I've mastered many concepts in full-stack development and this is my second go of making same app. <br><br>
 The whole point of the project was that data was saved on localstorage. Here I've embraced the tradition and used local file `db.json` to store information. <br><br>
 
 you can see the old project here: [HWH with pure javascript](https://hwh-old.netlify.app/) <br>
