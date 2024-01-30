@@ -22,25 +22,14 @@
     },
     {
       "author": "Tuxa",
-      "title": "Hello World! wazaa",
-      "text": "Hi!\n",
+      "title": "Hello World!",
+      "text": "",
       "authorId": 1,
       "subject": "Default",
       "likes": [],
       "comments": [],
-      "date": "Jan 31, 2:09 AM",
+      "date": "Jan 31, 2:46 AM",
       "id": 2
-    },
-    {
-      "author": "Tuxa",
-      "title": "what the fuck",
-      "text": "test 3 \n",
-      "authorId": 1,
-      "subject": "Default",
-      "likes": [],
-      "comments": [],
-      "date": "Jan 31, 2:10 AM",
-      "id": 3
     }
   ]
 }

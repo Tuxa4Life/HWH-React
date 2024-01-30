@@ -6,7 +6,7 @@
 
     .button.create {
         position: absolute;
-        top: 20px; right: 50px;
+        top: 10px; right: 50px;
     }
 
     .post-upload {
@@ -43,6 +43,7 @@
     .post-container {
         width: 100%;
         height: auto;
+        margin-top: 10px; // floating button -10px
 
         display: flex;
         align-items: center;

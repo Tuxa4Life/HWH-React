@@ -32,9 +32,15 @@ const Provider = ({ children }) => {
     }
 
     const editPost = (id, data) => axios.put(`http://localhost:3001/posts/${id}`, data)
+    const deletePost = (id) =>  {
+        axios.delete(`http://localhost:3001/posts/${id}`)
+
+        let output = posts.filter(e => e.id !== id)
+        setPosts(output)
+    }
 
     const dataToShare = {
-        posts, uploadPost, fetchPosts, getPost, editPost
+        posts, uploadPost, fetchPosts, getPost, editPost, deletePost
     }
 
     return (

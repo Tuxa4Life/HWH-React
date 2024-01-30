@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import PostTools from "./PostExtras/PostTools";
 import EditPost from "./PostExtras/EditPost";
+import DeletePost from "./PostExtras/DeletePost";
 
 const Post = ({ content, isOwn }) => {
     const [toolsOpen, setToolsOpen] = useState(false)
@@ -9,18 +10,22 @@ const Post = ({ content, isOwn }) => {
     const [editOpen, setEditOpen] = useState(false)
     const toggleEdit = () => setEditOpen(!editOpen)
 
+    const [deleteOpen, setDeleteOpen] = useState(false)
+    const toggleDelete = () => setDeleteOpen(!deleteOpen)
+
     return (
-        <div className="card" style={{margin: '30px 0 0 0', position: 'relative'}}>
+        <div className="card" style={{position: 'relative'}}>
             <i onClick={toggleTools} style={{display: `${isOwn ? 'block' : 'none'}`, position: 'absolute', top: '10px', right: '10px'}} className="ellipsis horizontal icon"></i>
-            { toolsOpen ? <PostTools toggleEdit={toggleEdit}/> : null }
+            { toolsOpen ? <PostTools toggleEdit={toggleEdit} toggleDelete={toggleDelete} /> : null }
 
             <div className="content">
-                <div className="header">{content.title}</div>
+                <h3 className="header" style={{margin: '0 0 7px 0'}}>{content.title}</h3>
                 <div className="meta"> {content.subject} <br />  {content.author} · {content.date}</div>
                 <div className="description">{content.text}</div>
             </div>
 
             { editOpen ? <EditPost toggleEdit={toggleEdit} toggleTools={toggleTools} content={content} /> : null }
+            { deleteOpen ? <DeletePost toggleDelete={toggleDelete} toggleTools={toggleTools} content={content} /> : null }
 
             <div className="extra" style={{display: 'flex', justifyContent: 'space-between', color: 'rgb(96, 96, 96)'}}>
                 <span>

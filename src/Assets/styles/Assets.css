@@ -5,7 +5,7 @@
 }
 .assets-container .button.create {
   position: absolute;
-  top: 20px;
+  top: 10px;
   right: 50px;
 }
 .assets-container .post-upload {
@@ -37,6 +37,7 @@
 .assets-container .post-container {
   width: 100%;
   height: auto;
+  margin-top: 10px;
   display: flex;
   align-items: center;
   justify-content: center;
