@@ -11,9 +11,9 @@ const Provider = ({ children }) => {
         setPosts(response.data)
     }, [])
 
-    const uploadPost = async (title, text, author) => {
+    const uploadPost = async (title, text, author, authorId) => {
         const response = await axios.post('http://localhost:3001/posts', {
-            author, title, text,
+            author, title, text, authorId,
             subject: 'Default',
             likes: [],
             comments: [],

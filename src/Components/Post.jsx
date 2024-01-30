@@ -1,8 +1,12 @@
 import React from "react";
 
-const Post = ({ content }) => {
+const Post = ({ content, isOwn }) => {
+
     return (
-        <div className="card" style={{margin: '30px 0 0 0'}}>
+        <div className="card" style={{margin: '30px 0 0 0', position: 'relative'}}>
+
+            <i style={{display: `${isOwn ? 'block' : 'none'}`, position: 'absolute', top: '10px', right: '10px'}} className="ellipsis horizontal icon"></i>
+
             <div className="content">
                 <div className="header">{content.title}</div>
                 <div className="meta"> {content.subject} <br />  {content.author} · {content.date}</div>

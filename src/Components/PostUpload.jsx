@@ -12,11 +12,13 @@ const PostUpload = ({ toggleUpload }) => {
     const upload = (e) => {
         e.preventDefault()
         let author = 'Guest'
+        let authorId = -1
         if (currentUser !== null) {
             author = currentUser.username
+            authorId = currentUser.id
         }
 
-        uploadPost(title, text, author)
+        uploadPost(title, text, author, authorId)
         toggleUpload()
     }
 

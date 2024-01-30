@@ -11,65 +11,25 @@
   "posts": [
     {
       "author": "Guest",
-      "title": "Hello World!",
-      "text": "How's it going?",
+      "title": "Hey",
+      "text": "",
+      "authorId": -1,
       "subject": "Default",
-      "likes": [
-        "Tuxa"
-      ],
+      "likes": [],
       "comments": [],
-      "date": "Jan 28, 10:17 PM",
+      "date": "Jan 31, 1:25 AM",
       "id": 1
     },
     {
-      "author": "Guest",
-      "title": "Bye World!",
-      "text": "Fuck you.",
-      "subject": "Default",
-      "likes": [],
-      "comments": [],
-      "date": "Jan 28, 10:23 PM",
-      "id": 2
-    },
-    {
-      "author": "Guest",
-      "title": "New Post!",
-      "text": "Follow me on instagram!\n@tuxa4life",
-      "subject": "Default",
-      "likes": [],
-      "comments": [],
-      "date": "Jan 30, 11:17 PM",
-      "id": 3
-    },
-    {
-      "author": "Guest",
-      "title": "now ",
-      "text": "we must change the guest here",
-      "subject": "Default",
-      "likes": [],
-      "comments": [],
-      "date": "Jan 31, 12:40 AM",
-      "id": 4
-    },
-    {
-      "author": "Guest",
-      "title": "Creating again",
-      "text": "",
-      "subject": "Default",
-      "likes": [],
-      "comments": [],
-      "date": "Jan 31, 12:43 AM",
-      "id": 5
-    },
-    {
       "author": "Tuxa",
-      "title": "Creating again again",
+      "title": "Ho",
       "text": "",
+      "authorId": 1,
       "subject": "Default",
       "likes": [],
       "comments": [],
-      "date": "Jan 31, 12:44 AM",
-      "id": 6
+      "date": "Jan 31, 1:25 AM",
+      "id": 2
     }
   ]
 }
