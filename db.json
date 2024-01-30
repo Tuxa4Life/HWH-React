@@ -1,39 +1,11 @@
 {
   "users": [
     {
-      "username": "Lets see the error",
-      "email": "im@scared.jsx",
-      "password": "pass",
-      "bookmarks": [],
-      "id": 1
-    },
-    {
-      "username": "sex",
+      "username": "Tuxa",
       "email": "nikoloztuxa@gmail.com",
       "password": "nikaanri4",
       "bookmarks": [],
-      "id": 2
-    },
-    {
-      "username": "do it again",
-      "email": "excell@sdasd.dsds",
-      "password": "asdasdasd",
-      "bookmarks": [],
-      "id": 3
-    },
-    {
-      "username": "test",
-      "email": "asdsd@sdasd.asd",
-      "password": "asdasdasdasd",
-      "bookmarks": [],
-      "id": 4
-    },
-    {
-      "username": "aasdasd",
-      "email": "adsasd@dasds.sad",
-      "password": "sdasdasdasd",
-      "bookmarks": [],
-      "id": 5
+      "id": 1
     }
   ],
   "posts": [
@@ -58,6 +30,16 @@
       "comments": [],
       "date": "Jan 28, 10:23 PM",
       "id": 2
+    },
+    {
+      "author": "Guest",
+      "title": "New Post!",
+      "text": "Follow me on instagram!\n@tuxa4life",
+      "subject": "Default",
+      "likes": [],
+      "comments": [],
+      "date": "Jan 30, 11:17 PM",
+      "id": 3
     }
   ]
 }

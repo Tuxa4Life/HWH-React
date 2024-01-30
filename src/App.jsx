@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import './Assets/styles/App.css'
 import Navbar from "./Components/Navbar";
 import Route from "./Routes/Route";

@@ -1,14 +1,17 @@
 import React, { useState } from "react";
 import Register from "./Auth/Register";
+import useUsersContext from "../Hooks/useUsersContext";
+import Login from "./Auth/Login";
 
 const UserCard = ({ toggleUserCard }) => {
-    const [cardState, setCardState] = useState(2) // 0 - profile, 1 - login, 2 - register
+    const { currentUser } = useUsersContext()
+    const [openLogin, setOpenLogin] = useState(true)
 
     return (
         <div className="usercard-container">
-            { cardState === 0 ? 'profile' : null }
-            { cardState === 1 ? 'login' : null }
-            { cardState === 2 ? <Register toggleUserCard={toggleUserCard} /> : null }
+            { currentUser !== null ? 'profile' : null }
+            { currentUser === null && openLogin ? <Login toggleUserCard={toggleUserCard} switchToRegister={() => setOpenLogin(false)}/> : null }
+            { currentUser === null && !openLogin ? <Register toggleUserCard={toggleUserCard} switchToLogin={() => setOpenLogin(true)}/> : null }
         </div>
     )
 

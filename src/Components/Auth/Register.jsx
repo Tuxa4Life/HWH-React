@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import useUsersContext from "../../Hooks/useUsersContext";
 
-const Register = ({ toggleUserCard }) => {
+const Register = ({ toggleUserCard, switchToLogin }) => {
     const { registerUser } = useUsersContext()
 
     const [username, setUsername] = useState('')
@@ -36,7 +36,7 @@ const Register = ({ toggleUserCard }) => {
                 <input required type="password" value={password} onChange={e => setPassword(e.target.value)} placeholder="But remember creds to login later!" />
             </div>
             <div className="btn-holder" style={{display: 'flex', alignItems: 'center'}}>
-                <p style={{textDecoration: 'underline', fontSize: '14px', margin: '0', cursor: 'pointer'}}>Login</p>
+                <p onClick={switchToLogin} style={{textDecoration: 'underline', fontSize: '14px', margin: '0', cursor: 'pointer'}}>Login</p>
                 <span style={{width: '100%', display: 'flex', justifyContent: 'right'}}>
                     <button className="ui secondary inverted button" type="submit">Register</button>
                     <button className="ui button" type="button" onClick={toggleUserCard}>Close</button>
