@@ -31,8 +31,10 @@ const Provider = ({ children }) => {
         })
     }
 
+    const editPost = (id, data) => axios.put(`http://localhost:3001/posts/${id}`, data)
+
     const dataToShare = {
-        posts, uploadPost, fetchPosts, getPost
+        posts, uploadPost, fetchPosts, getPost, editPost
     }
 
     return (
