@@ -1,5 +1,41 @@
 {
-  "users": [],
+  "users": [
+    {
+      "username": "Lets see the error",
+      "email": "im@scared.jsx",
+      "password": "pass",
+      "bookmarks": [],
+      "id": 1
+    },
+    {
+      "username": "sex",
+      "email": "nikoloztuxa@gmail.com",
+      "password": "nikaanri4",
+      "bookmarks": [],
+      "id": 2
+    },
+    {
+      "username": "do it again",
+      "email": "excell@sdasd.dsds",
+      "password": "asdasdasd",
+      "bookmarks": [],
+      "id": 3
+    },
+    {
+      "username": "test",
+      "email": "asdsd@sdasd.asd",
+      "password": "asdasdasdasd",
+      "bookmarks": [],
+      "id": 4
+    },
+    {
+      "username": "aasdasd",
+      "email": "adsasd@dasds.sad",
+      "password": "sdasdasdasd",
+      "bookmarks": [],
+      "id": 5
+    }
+  ],
   "posts": [
     {
       "author": "Guest",
