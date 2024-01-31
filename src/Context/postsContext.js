@@ -70,7 +70,6 @@ const Provider = ({ children }) => {
 
         editPost(id, targetPost)
         setPosts([...posts.slice(0, index), targetPost, ...posts.slice(index + 1)])
-        console.log(targetPost.likes)
     }
 
     const dataToShare = {
