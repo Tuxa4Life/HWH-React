@@ -9,7 +9,7 @@ const PostContainer = () => {
     
     const content = posts.map(e => {
         let userId = currentUser ? currentUser.id : 0
-        return <Post key={e.id} content={e} isOwn={userId === e.authorId}/>
+        return <Post key={e.id} content={e} isOwn={userId === e.authorId} currentUserId={userId}/>
     })
     return (
         <div className="post-container ui cards">

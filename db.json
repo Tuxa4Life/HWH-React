@@ -3,32 +3,49 @@
     {
       "username": "Tuxa",
       "email": "nikoloztuxa@gmail.com",
-      "password": "nikaanri4",
+      "password": "tuxamagaria",
       "bookmarks": [],
       "id": 1
+    },
+    {
+      "username": "Tuxa 2",
+      "email": "nikoloztuxa@outlook.com",
+      "password": "tuxamagaria",
+      "bookmarks": [],
+      "id": 2
     }
   ],
   "posts": [
     {
-      "author": "Guest",
-      "title": "Hey",
-      "text": "",
-      "authorId": -1,
-      "subject": "Default",
-      "likes": [],
-      "comments": [],
-      "date": "Jan 31, 1:25 AM",
-      "id": 1
-    },
-    {
       "author": "Tuxa",
-      "title": "Hello World!",
+      "title": "New Post!",
       "text": "",
       "authorId": 1,
       "subject": "Default",
-      "likes": [],
+      "likes": [
+        {
+          "username": "Tuxa 2",
+          "userId": 2
+        }
+      ],
       "comments": [],
-      "date": "Jan 31, 2:46 AM",
+      "date": "Jan 31, 12:50 PM",
+      "id": 1
+    },
+    {
+      "author": "Tuxa 2",
+      "title": "Second Post!",
+      "text": "Hello World!",
+      "authorId": 2,
+      "subject": "Default",
+      "likes": [
+        {
+          "username": "Tuxa 2",
+          "userId": 2
+        }
+      ],
+      "comments": [],
+      "date": "Jan 31, 1:02 PM",
       "id": 2
     }
   ]

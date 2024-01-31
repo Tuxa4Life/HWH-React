@@ -2,8 +2,13 @@ import React, { useState } from "react";
 import PostTools from "./PostExtras/PostTools";
 import EditPost from "./PostExtras/EditPost";
 import DeletePost from "./PostExtras/DeletePost";
+import usePostsContext from "../Hooks/usePostsContext";
+import useUsersContext from "../Hooks/useUsersContext";
 
-const Post = ({ content, isOwn }) => {
+const Post = ({ content, isOwn, currentUserId }) => {
+    const { likePost } = usePostsContext()
+    const { getUser } = useUsersContext()
+
     const [toolsOpen, setToolsOpen] = useState(false)
     const toggleTools = () => setToolsOpen(!toolsOpen)
 
@@ -13,6 +18,7 @@ const Post = ({ content, isOwn }) => {
     const [deleteOpen, setDeleteOpen] = useState(false)
     const toggleDelete = () => setDeleteOpen(!deleteOpen)
 
+    const like = () => likePost(content.id, getUser(currentUserId) ? getUser(currentUserId).username : 'Guest', currentUserId)
     return (
         <div className="card" style={{position: 'relative'}}>
             <i onClick={toggleTools} style={{display: `${isOwn ? 'block' : 'none'}`, position: 'absolute', top: '10px', right: '10px'}} className="ellipsis horizontal icon"></i>
@@ -29,7 +35,7 @@ const Post = ({ content, isOwn }) => {
 
             <div className="extra" style={{display: 'flex', justifyContent: 'space-between', color: 'rgb(96, 96, 96)'}}>
                 <span>
-                    <span><i className="heart outline icon"></i> {content.likes.length}</span>
+                    <span onClick={like}><i className={`heart ${content.likes.find((e) => e.userId === currentUserId) ? '' : 'outline'} icon`}></i> {content.likes.length}</span>
                     <span style={{margin: '0 0 0 20px'}}><i className="comment outline icon"></i> {content.comments.length}</span>
                 </span>
                 <i className="bookmark outline icon"></i>

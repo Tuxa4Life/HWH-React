@@ -14,7 +14,7 @@ const Assets = () => {
 
     useEffect(() => {
         fetchPosts()
-    }, [])
+    }, [fetchPosts])
 
     return (
         <div className="assets-container">
