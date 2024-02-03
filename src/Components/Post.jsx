@@ -4,6 +4,7 @@ import EditPost from "./PostExtras/EditPost";
 import DeletePost from "./PostExtras/DeletePost";
 import usePostsContext from "../Hooks/usePostsContext";
 import useUsersContext from "../Hooks/useUsersContext";
+import Comments from "./PostExtras/Comments";
 
 const Post = ({ content, isOwn, currentUserId }) => {
     const { likePost } = usePostsContext()
@@ -17,6 +18,9 @@ const Post = ({ content, isOwn, currentUserId }) => {
 
     const [deleteOpen, setDeleteOpen] = useState(false)
     const toggleDelete = () => setDeleteOpen(!deleteOpen)
+
+    const [commentsOpen, setCommentsOpen] = useState(false)
+    const toggleComments = () => setCommentsOpen(!commentsOpen)
 
     const like = () => likePost(content.id, getUser(currentUserId) ? getUser(currentUserId).username : 'Guest', currentUserId)
     return (
@@ -32,11 +36,12 @@ const Post = ({ content, isOwn, currentUserId }) => {
 
             { editOpen ? <EditPost toggleEdit={toggleEdit} toggleTools={toggleTools} content={content} /> : null }
             { deleteOpen ? <DeletePost toggleDelete={toggleDelete} toggleTools={toggleTools} content={content} /> : null }
+            { commentsOpen ? <Comments /> : null }
 
             <div className="extra" style={{display: 'flex', justifyContent: 'space-between', color: 'rgb(96, 96, 96)'}}>
                 <span>
                     <span onClick={like}><i className={`heart ${content.likes.find((e) => e.userId === currentUserId) ? '' : 'outline'} icon`}></i> {content.likes.length}</span>
-                    <span style={{margin: '0 0 0 20px'}}><i className="comment outline icon"></i> {content.comments.length}</span>
+                    <span onClick={toggleComments} style={{margin: '0 0 0 20px'}}><i className="comment outline icon"></i> {content.comments.length}</span>
                 </span>
                 <i className="bookmark outline icon"></i>
             </div>

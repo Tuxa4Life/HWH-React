@@ -1,4 +1,35 @@
 {
-  "users": [],
-  "posts": []
+  "users": [
+    {
+      "username": "Tuxa",
+      "email": "test@test.test",
+      "password": "test",
+      "bookmarks": [],
+      "id": 1
+    }
+  ],
+  "posts": [
+    {
+      "author": "Guest",
+      "title": "New Post ",
+      "text": "",
+      "authorId": -1,
+      "subject": "Default",
+      "likes": [],
+      "comments": [],
+      "date": "Jan 31, 4:31 PM",
+      "id": 1
+    },
+    {
+      "author": "Tuxa",
+      "title": "Hello World!",
+      "text": "Lorem ipsum dolor sit amet",
+      "authorId": 1,
+      "subject": "Default",
+      "likes": [],
+      "comments": [],
+      "date": "Jan 31, 4:34 PM",
+      "id": 2
+    }
+  ]
 }
