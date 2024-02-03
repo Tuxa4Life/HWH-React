@@ -18,11 +18,15 @@ const UserProvider = ({ children }) => {
         setCurrentUser(response.data)
         setLoggedIn(true)
         setUsers([...users, response.data])
+
+        localStorage.setItem('user-exists', JSON.stringify(response.data))
     }
 
     const logoutUser = () => {
         setCurrentUser(null)
         setLoggedIn(false)
+
+        localStorage.removeItem('user-exists')
     }
 
     const loginUser = ({ email, password }) => {
@@ -30,6 +34,8 @@ const UserProvider = ({ children }) => {
         if (targetUser.length === 1) {
             setCurrentUser(targetUser[0])
             setLoggedIn(true)
+
+            localStorage.setItem('user-exists', JSON.stringify(targetUser[0]))
             return true
         } else {
             return false
@@ -42,8 +48,17 @@ const UserProvider = ({ children }) => {
         return null
     }
 
+    const onApplicationLoad = useCallback(() => {
+        if (localStorage.getItem('user-exists')) {
+            let user = JSON.parse(localStorage.getItem('user-exists'))
+
+            setCurrentUser(user)
+            setLoggedIn(true)
+        }
+    }, [])
+
     const dataToShare = {
-        users, currentUser, loggedIn, registerUser, logoutUser, loginUser, fetchUsers, getUser
+        users, currentUser, loggedIn, registerUser, logoutUser, loginUser, fetchUsers, getUser, onApplicationLoad
     }
 
     return (

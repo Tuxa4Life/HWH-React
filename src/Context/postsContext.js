@@ -14,7 +14,6 @@ const Provider = ({ children }) => {
     const uploadPost = async (title, text, author, authorId) => {
         const response = await axios.post('http://localhost:3001/posts', {
             author, title, text, authorId,
-            subject: 'Default',
             likes: [],
             comments: [],
             date: new Date().toLocaleString('en-US', { day: 'numeric', month: 'short', hour: 'numeric', minute: 'numeric' })

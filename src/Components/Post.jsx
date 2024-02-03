@@ -30,7 +30,7 @@ const Post = ({ content, isOwn, currentUserId }) => {
 
             <div className="content">
                 <h3 className="header" style={{margin: '0 0 7px 0'}}>{content.title}</h3>
-                <div className="meta"> {content.subject} <br />  {content.author} · {content.date}</div>
+                <div className="meta">{content.author} · {content.date}</div>
                 <div className="description">{content.text}</div>
             </div>
 

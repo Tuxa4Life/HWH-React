@@ -5,7 +5,7 @@ const CommentList = ({ comments }) => {
         return (
             <div className="comment">
                 <div className="content">
-                    <a className="author">{e.user}</a>
+                    <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" className="author">{e.user}</a>
                     <div className="metadata">
                         <span className="date">{e.date}</span>
                     </div>
