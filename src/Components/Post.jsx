@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import PostTools from "./PostExtras/PostTools";
 import EditPost from "./PostExtras/EditPost";
 import DeletePost from "./PostExtras/DeletePost";
@@ -6,9 +6,11 @@ import usePostsContext from "../Hooks/usePostsContext";
 import useUsersContext from "../Hooks/useUsersContext";
 import Comments from "./PostExtras/Comments";
 
-const Post = ({ content, isOwn, currentUserId }) => {
+const Post = ({ content, isOwn, currentUserId, currentBookmarks }) => { {/* I was too lazy to write good code here */}
     const { likePost } = usePostsContext()
-    const { getUser } = useUsersContext()
+    const { getUser, bookmarkPost } = useUsersContext()
+
+    const [bookmarkState, setBookmarkState] = useState(false)
 
     const [toolsOpen, setToolsOpen] = useState(false)
     const toggleTools = () => setToolsOpen(!toolsOpen)
@@ -23,6 +25,15 @@ const Post = ({ content, isOwn, currentUserId }) => {
     const toggleComments = () => setCommentsOpen(!commentsOpen)
 
     const like = () => likePost(content.id, getUser(currentUserId) ? getUser(currentUserId).username : 'Guest', currentUserId)
+    const bookmark = () => {
+        bookmarkPost(content)
+        setBookmarkState(!bookmarkState )
+    }
+
+    useEffect(() => { {/* this is quite expensive yes, but its 2 am and im too tired to find a better solution */}
+        if (currentBookmarks.find(e => e.id === content.id)) setBookmarkState(true)
+    }, [])
+
     return (
         <div className="card" style={{position: 'relative'}}>
             <i onClick={toggleTools} style={{display: `${isOwn ? 'block' : 'none'}`, position: 'absolute', top: '10px', right: '10px'}} className="ellipsis horizontal icon"></i>
@@ -43,7 +54,7 @@ const Post = ({ content, isOwn, currentUserId }) => {
                     <span onClick={like}><i className={`heart ${content.likes.find((e) => e.userId === currentUserId) ? '' : 'outline'} icon`}></i> {content.likes.length}</span>
                     <span onClick={toggleComments} style={{margin: '0 0 0 20px'}}><i className="comment outline icon"></i> {content.comments.length}</span>
                 </span>
-                <i className="bookmark outline icon"></i>
+                <i onClick={bookmark} className={`bookmark ${currentBookmarks.find(e => e.id === content.id) ? '' : 'outline'} icon`}></i>
             </div>
         </div>
     )

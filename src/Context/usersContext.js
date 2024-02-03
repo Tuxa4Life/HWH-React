@@ -48,6 +48,25 @@ const UserProvider = ({ children }) => {
         return null
     }
 
+    const bookmarkPost = (post) => {
+        const user = currentUser
+        
+        if (user.bookmarks.find(e => e.id === post.id)) {
+            let index
+            user.bookmarks.forEach((e, i) => {
+                if (e.id === post.id) index = i
+            })
+
+            user.bookmarks.splice(index, 1)
+        } else {
+            user.bookmarks.push(post)
+        }
+
+        setCurrentUser(user)
+        localStorage.setItem('user-exists', JSON.stringify(user))
+        axios.put(`http://127.0.0.1:3001/users/${user.id}`, user)
+    }
+
     const onApplicationLoad = useCallback(() => {
         if (localStorage.getItem('user-exists')) {
             let user = JSON.parse(localStorage.getItem('user-exists'))
@@ -58,7 +77,7 @@ const UserProvider = ({ children }) => {
     }, [])
 
     const dataToShare = {
-        users, currentUser, loggedIn, registerUser, logoutUser, loginUser, fetchUsers, getUser, onApplicationLoad
+        users, currentUser, loggedIn, registerUser, logoutUser, loginUser, fetchUsers, getUser, onApplicationLoad, bookmarkPost
     }
 
     return (

@@ -21,6 +21,16 @@
           "user": "Tuxa",
           "text": "Lmao guests can post here?",
           "date": "Feb 3, 11:52 PM"
+        },
+        {
+          "user": "Tuxa",
+          "text": "That's wierd",
+          "date": "Feb 4, 12:41 AM"
+        },
+        {
+          "user": "Tuxa",
+          "text": "they cannot do anything except posting ig lmao",
+          "date": "Feb 4, 12:41 AM"
         }
       ],
       "date": "Jan 31, 4:31 PM",
@@ -34,7 +44,7 @@
       "subject": "Default",
       "likes": [
         {
-          "username": "Tuxa",
+          "username": "Guest",
           "userId": 1
         }
       ],

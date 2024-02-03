@@ -62,7 +62,7 @@ const Provider = ({ children }) => {
                 if (e.userId === userId) likeIndex = i
             })
 
-            targetPost.likes.splice(likeIndex, 1);
+            targetPost.likes.splice(likeIndex, 1)
         } else {
             targetPost.likes.push({username, userId})
         }
