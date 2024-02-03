@@ -72,8 +72,19 @@ const Provider = ({ children }) => {
         setPosts([...posts.slice(0, index), targetPost, ...posts.slice(index + 1)])
     }
 
+    const commentOnPost = (user, text, postId) => {
+        const targetPost = getPost(postId)
+        const index = getPostIndex(postId)
+
+        targetPost.comments.push({ user, text,
+            date: new Date().toLocaleString('en-US', { day: 'numeric', month: 'short', hour: 'numeric', minute: 'numeric' }) 
+        })
+        editPost(postId, targetPost)
+        setPosts([...posts.slice(0, index), targetPost, ...posts.slice(index + 1)])
+    }
+
     const dataToShare = {
-        posts, uploadPost, fetchPosts, editPost, deletePost, likePost
+        posts, uploadPost, fetchPosts, editPost, deletePost, likePost, commentOnPost
     }
 
     return (

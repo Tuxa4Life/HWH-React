@@ -16,7 +16,13 @@
       "authorId": -1,
       "subject": "Default",
       "likes": [],
-      "comments": [],
+      "comments": [
+        {
+          "user": "Tuxa",
+          "text": "Lmao guests can post here?",
+          "date": "Feb 3, 11:52 PM"
+        }
+      ],
       "date": "Jan 31, 4:31 PM",
       "id": 1
     },
@@ -26,8 +32,24 @@
       "text": "Lorem ipsum dolor sit amet",
       "authorId": 1,
       "subject": "Default",
-      "likes": [],
-      "comments": [],
+      "likes": [
+        {
+          "username": "Tuxa",
+          "userId": 1
+        }
+      ],
+      "comments": [
+        {
+          "user": "Tuxa",
+          "text": "First comment",
+          "date": "Feb 3, 11:48 PM"
+        },
+        {
+          "user": "Tuxa",
+          "text": "Second comment",
+          "date": "Feb 3, 11:51 PM"
+        }
+      ],
       "date": "Jan 31, 4:34 PM",
       "id": 2
     }

@@ -36,7 +36,7 @@ const Post = ({ content, isOwn, currentUserId }) => {
 
             { editOpen ? <EditPost toggleEdit={toggleEdit} toggleTools={toggleTools} content={content} /> : null }
             { deleteOpen ? <DeletePost toggleDelete={toggleDelete} toggleTools={toggleTools} content={content} /> : null }
-            { commentsOpen ? <Comments /> : null }
+            { commentsOpen ? <Comments post={content}/> : null }
 
             <div className="extra" style={{display: 'flex', justifyContent: 'space-between', color: 'rgb(96, 96, 96)'}}>
                 <span>
