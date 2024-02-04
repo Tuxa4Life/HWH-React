@@ -26,8 +26,12 @@ const Post = ({ content, isOwn, currentUserId, currentBookmarks }) => { {/* I wa
 
     const like = () => likePost(content.id, getUser(currentUserId) ? getUser(currentUserId).username : 'Guest', currentUserId)
     const bookmark = () => {
-        bookmarkPost(content)
-        setBookmarkState(!bookmarkState )
+        if (currentUserId) {
+            bookmarkPost(content)
+            setBookmarkState(!bookmarkState )
+        } else {
+            alert('Guests cannot bookmark.')
+        }
     }
 
     useEffect(() => { {/* this is quite expensive yes, but its 2 am and im too tired to find a better solution */}
@@ -47,8 +51,6 @@ const Post = ({ content, isOwn, currentUserId, currentBookmarks }) => { {/* I wa
 
             { editOpen ? <EditPost toggleEdit={toggleEdit} toggleTools={toggleTools} content={content} /> : null }
             { deleteOpen ? <DeletePost toggleDelete={toggleDelete} toggleTools={toggleTools} content={content} /> : null }
-            { commentsOpen ? <Comments post={content}/> : null }
-
             <div className="extra" style={{display: 'flex', justifyContent: 'space-between', color: 'rgb(96, 96, 96)'}}>
                 <span>
                     <span onClick={like}><i className={`heart ${content.likes.find((e) => e.userId === currentUserId) ? '' : 'outline'} icon`}></i> {content.likes.length}</span>
@@ -56,6 +58,8 @@ const Post = ({ content, isOwn, currentUserId, currentBookmarks }) => { {/* I wa
                 </span>
                 <i onClick={bookmark} className={`bookmark ${currentBookmarks.find(e => e.id === content.id) ? '' : 'outline'} icon`}></i>
             </div>
+
+            { commentsOpen ? <Comments post={content}/> : null }
         </div>
     )
 }

@@ -1,9 +1,9 @@
 import React from "react";
 
 const CommentList = ({ comments }) => {
-    const renderedComments = comments.map(e => {
+    const renderedComments = comments.map((e, i) => {
         return (
-            <div className="comment">
+            <div key={i} className="comment">
                 <div className="content">
                     <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" className="author">{e.user}</a>
                     <div className="metadata">
