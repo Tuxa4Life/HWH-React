@@ -9,7 +9,7 @@ The whole point of the project was that data was saved on localstorage. Here I'v
 
 you can see the old project here: [HWH with pure javascript](https://hwh-old.netlify.app/) <br>
 
-heres the preview of the current project. *link will be uploaded when the project will be finished*
+heres the preview of the current project. *link will be uploaded when the project will be finished.* <br>
 but, I've changed database from db.json to firebase, because netlify doesn't allow concurrent server hosting.
 
 *to setup this project you'll need to host server and website on localhost concurrently* <br>

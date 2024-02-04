@@ -4,7 +4,35 @@
       "username": "Tuxa",
       "email": "test@test.test",
       "password": "test",
-      "bookmarks": [],
+      "bookmarks": [
+        {
+          "author": "Tuxa",
+          "title": "Hello World!",
+          "text": "Lorem ipsum dolor sit amet",
+          "authorId": 1,
+          "subject": "Default",
+          "likes": [
+            {
+              "username": "Guest",
+              "userId": 1
+            }
+          ],
+          "comments": [
+            {
+              "user": "Tuxa",
+              "text": "First comment",
+              "date": "Feb 3, 11:48 PM"
+            },
+            {
+              "user": "Tuxa",
+              "text": "Second comment",
+              "date": "Feb 3, 11:51 PM"
+            }
+          ],
+          "date": "Jan 31, 4:34 PM",
+          "id": 2
+        }
+      ],
       "id": 1
     }
   ],
