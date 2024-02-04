@@ -1,8 +1,12 @@
-import React from "react";
+import React, { useState } from "react";
 import useUsersContext from "../../Hooks/useUsersContext";
+import EditUsername from "./EditCreds/EditUsername";
 
 const Profile = ({ toggleUserCard }) => {
     const { currentUser, logoutUser } = useUsersContext()
+
+    const [usernameEdit, setUsernameEdit] = useState(false)
+    const toggleUsernameEdit = () => setUsernameEdit(!usernameEdit)
 
     const logout = () => {
         logoutUser()
@@ -11,10 +15,12 @@ const Profile = ({ toggleUserCard }) => {
 
     return (
         <div className="card" style={{backgroundColor: 'white', border: '1px black solid', borderRadius: '7px', padding: '15px', minWidth: '270px'}}>
+            { usernameEdit ? <EditUsername toggleUsernameEdit={toggleUsernameEdit} /> : null }
+            
             <div className="content">
                 <div style={{display: 'flex', alignItems: 'center'}}>
                     <h2 style={{margin: '0'}} className="header">{currentUser.username}</h2>
-                    <i style={{marginLeft: '10px', cursor: 'pointer'}} className="ui icon pencil"></i>
+                    <i onClick={toggleUsernameEdit} style={{marginLeft: '10px', cursor: 'pointer'}} className="ui icon pencil"></i>
                 </div>
                 <div className="meta">{currentUser.email}</div>
                 <span style={{textDecoration: 'underline', fontSize: '12px', cursor: 'pointer'}}>reset password</span>

@@ -48,6 +48,12 @@ const UserProvider = ({ children }) => {
         return null
     }
 
+    const updateUserData = async (obj) => {
+        const response = await axios.put(`http://127.0.0.1:3001/users/${obj.id}`, obj)
+        setCurrentUser(response.data)
+        localStorage.setItem('user-exists', JSON.stringify(response.data))
+    }  
+
     const bookmarkPost = (post) => {
         const user = currentUser
         
@@ -77,7 +83,9 @@ const UserProvider = ({ children }) => {
     }, [])
 
     const dataToShare = {
-        users, currentUser, loggedIn, registerUser, logoutUser, loginUser, fetchUsers, getUser, onApplicationLoad, bookmarkPost
+        users, currentUser, loggedIn, registerUser, logoutUser, 
+        loginUser, fetchUsers, getUser, onApplicationLoad, bookmarkPost,
+        updateUserData
     }
 
     return (
