@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import usePostsContext from '../Hooks/usePostsContext';
-import useUsersContext from "../Hooks/useUsersContext";
+import usePostsContext from '../../Hooks/usePostsContext';
+import useUsersContext from "../../Hooks/useUsersContext";
 
 const PostUpload = ({ toggleUpload }) => {
     const { uploadPost } = usePostsContext();

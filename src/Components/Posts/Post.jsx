@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from "react";
-import PostTools from "./PostExtras/PostTools";
-import EditPost from "./PostExtras/EditPost";
-import DeletePost from "./PostExtras/DeletePost";
-import usePostsContext from "../Hooks/usePostsContext";
-import useUsersContext from "../Hooks/useUsersContext";
-import Comments from "./PostExtras/Comments";
+import PostTools from "./Extras/PostTools";
+import EditPost from "./Extras/EditPost";
+import DeletePost from "./Extras/DeletePost";
+import usePostsContext from "../../Hooks/usePostsContext";
+import useUsersContext from "../../Hooks/useUsersContext";
+import Comments from "./Extras/Comments";
 
 const Post = ({ content, isOwn, currentUserId, currentBookmarks }) => { {/* I was too lazy to write good code here */}
     const { likePost } = usePostsContext()

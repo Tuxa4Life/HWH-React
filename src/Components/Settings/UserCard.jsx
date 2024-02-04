@@ -1,8 +1,8 @@
 import React, { useState } from "react";
-import Register from "./Auth/Register";
-import useUsersContext from "../Hooks/useUsersContext";
-import Login from "./Auth/Login";
-import Profile from "./Auth/Profile";
+import Register from "../Auth/Register";
+import useUsersContext from "../../Hooks/useUsersContext";
+import Login from "../Auth/Login";
+import Profile from "../Auth/Profile";
 
 const UserCard = ({ toggleUserCard }) => {
     const { currentUser } = useUsersContext()

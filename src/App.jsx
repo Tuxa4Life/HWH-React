@@ -3,7 +3,7 @@ import './Assets/styles/App.css'
 import Navbar from "./Components/Navbar";
 import Route from "./Routes/Route";
 import Assets from "./Components/Assets";
-import Settings from "./Components/Settings";
+import Settings from "./Components/Settings/Settings";
 import useUsersContext from "./Hooks/useUsersContext";
 
 const App = () => {

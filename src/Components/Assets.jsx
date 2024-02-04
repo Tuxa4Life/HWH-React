@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
 import '../Assets/styles/Assets.css'
-import PostUpload from "./PostUpload";
+import PostUpload from "./Posts/PostUpload";
 import usePostsContext from "../Hooks/usePostsContext";
-import PostContainer from "./PostContainer";
+import PostContainer from "./Posts/PostContainer";
 
 const Assets = () => {
     const { fetchPosts } = usePostsContext()

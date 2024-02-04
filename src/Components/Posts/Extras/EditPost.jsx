@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import usePostsContext from "../../Hooks/usePostsContext";
+import usePostsContext from "../../../Hooks/usePostsContext";
 
 const EditPost = ({ toggleEdit, toggleTools, content }) => {
     const { editPost } = usePostsContext()

@@ -1,6 +1,6 @@
 import React from "react";
 import Post from "../Post";
-import usePostsContext from "../../Hooks/usePostsContext";
+import usePostsContext from "../../../Hooks/usePostsContext";
 
 const DeletePost = ({ toggleDelete, toggleTools, content }) => {
     const { deletePost } = usePostsContext()

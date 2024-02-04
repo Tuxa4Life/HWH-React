@@ -1,6 +1,6 @@
 import React from "react";
-import usePostsContext from "../Hooks/usePostsContext";
-import useUsersContext from "../Hooks/useUsersContext"
+import usePostsContext from "../../Hooks/usePostsContext";
+import useUsersContext from "../../Hooks/useUsersContext"
 import Post from './Post';
 
 const PostContainer = () => {
